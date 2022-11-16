@@ -2,18 +2,7 @@ import { render, screen } from '@testing-library/react'
 import Home from '../pages/index'
 import '@testing-library/jest-dom'
 
-// TODO: create todo 
-// TODO: edit todo 
-// TODO: save todo 
-// TODO: make data model for todo 
-// TODO: style todo 
-// TODO: delete todo 
-// TODO: save to local storage 
-// TODO: save to database 
-// TODO: delete from database 
 // TODO: deploy
-// TODO: heading
-// TODO: validation
 
 describe('Home', () => {
     it('renders todo heading', () => {
@@ -35,4 +24,6 @@ describe('Home', () => {
     it.skip('saves todo to database', () => { })
     it.skip('loads todos from database', () => { })
     it.skip('renders loaded todos', () => { })
+    it.skip('validates text in todos - removes whitespace etc and checks max length', () => { })
+    it.skip('validates text in todos - removes whitespace etc and checks max length', () => { })
 })
