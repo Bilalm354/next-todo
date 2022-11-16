@@ -2,7 +2,25 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
+interface ListItem {
+  dateSaved: Date;
+  text: string;
+}
+
 export default function Home() {
+  // TODO: create todo 
+  // TODO: edit todo 
+  // TODO: save todo 
+  // TODO: make data model for todo 
+  // TODO: style todo 
+  // TODO: delete todo 
+  // TODO: save to local storage 
+  // TODO: save to database 
+  // TODO: delete from database 
+  // TODO: deploy
+  // TODO: heading
+  // TODO: validation
+
   return (
     <div className={styles.container}>
       <Head>
