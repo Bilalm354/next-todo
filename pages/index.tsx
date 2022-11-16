@@ -7,6 +7,13 @@ interface ListItem {
   text: string;
 }
 
+let thing = 0;
+
+const a = () => 'hi'
+
+// TODO: get rid of unused things in here
+// TODO: make linting work 
+
 export default function Home() {
   return (
     <div className={styles.container}>
