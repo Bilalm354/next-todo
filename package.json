@@ -7,9 +7,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "integration-test": "cypress open",
+    "cypress": "cypress open",
     "test": "jest",
     "test:watch": "jest --watch",
+    "test:integration": "cypress run --headless",
     "prepare": "husky install"
   },
   "dependencies": {

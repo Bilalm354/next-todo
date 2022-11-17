@@ -8,6 +8,7 @@ interface ListItem {
 
 // TODO: make linting work 
 // TODO: get rid of unused things in here
+// TODO: get rid of excess cypress files
 
 export default function Home() {
   return (
@@ -15,11 +16,11 @@ export default function Home() {
       <Head>
         <title>Todos</title>
         <meta name="description" content="Todo app create by Bilal Minhas in NextJs" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" />
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
+        <h1 className={styles.title} data-testid='heading'>
           Todos
         </h1>
       </main>
