@@ -2,8 +2,6 @@ import { render, screen } from '@testing-library/react'
 import Home from '../pages/index'
 import '@testing-library/jest-dom'
 
-// TODO: potensh change to typescript -- needs jest dom types 
-
 describe('index', () => {
     beforeEach(() => {
         render(<Home />)
@@ -17,14 +15,13 @@ describe('index', () => {
         expect(heading).toBeInTheDocument();
     })
 
-    it('should render input box for todo', () => {
-        const todoInputBox = screen.getByTestId('todo-input-box');
-        expect(todoInputBox).toBeInTheDocument();
+
+    it('should add new todo to existing todos when you press enter on input box', () => {
+
     })
 
     it.skip('should allow user to create todo', () => { })
     it.skip('user can edit todo', () => { })
-    it.skip('user can delete todo', () => { })
     it.skip('added todo is saved to local storage', () => { })
     it.skip('can save todo', () => { })
     it.skip('todo is styled', () => { })

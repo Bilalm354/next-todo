@@ -1,16 +1,43 @@
 import Head from 'next/head'
+import { useState } from 'react';
+import TodoInput from '../components/TodoInput';
+import TodoItem, { TodoItemProps } from '../components/TodoItem'
+import TodoItemsList from '../components/TodoitemsList'
 import styles from '../styles/Home.module.css'
 
-interface ListItem {
-  dateSaved: Date;
-  text: string;
+export interface TodoItemData {
+  text: string,
+  id: string
 }
 
-// TODO: make linting work 
-// TODO: get rid of unused things in here
-// TODO: get rid of excess cypress files
+export const returnNewTodoItemWithText = (text: string): TodoItemData => {
+  const id = Math.random().toString();
+  return { text, id }
+}
+
+const getExistingTodos = () => getFakeExistingTodos();
+
+export const getFakeExistingTodos = (): TodoItemData[] => [
+  returnNewTodoItemWithText('hello'),
+  returnNewTodoItemWithText('hi')
+];
+
 
 export default function Home() {
+  const [todos, setTodos] = useState(getExistingTodos());
+  const addTodo = (text: string) => {
+    setTodos([...todos, returnNewTodoItemWithText(text)])
+  }
+
+  const deleteAllItems = () => {
+    setTodos([]);
+  }
+
+  const deleteItem = (id: string) => {
+    const newTodos: TodoItemData[] = []; // todo 
+    setTodos(newTodos);
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -24,7 +51,10 @@ export default function Home() {
           Todos
         </h1>
 
-        <input type={'text'} data-testId='todo-input-box' />
+        <TodoInput addTodo={addTodo} />
+
+        <TodoItemsList todoItemsData={todos} deleteItem={deleteItem} />
+
       </main>
 
       <footer className={styles.footer}>
