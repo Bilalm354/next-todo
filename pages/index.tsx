@@ -23,6 +23,8 @@ export default function Home() {
         <h1 className={styles.title} data-testid='heading'>
           Todos
         </h1>
+
+        <input type={'text'} data-testId='todo-input-box' />
       </main>
 
       <footer className={styles.footer}>
