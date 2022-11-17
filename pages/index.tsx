@@ -5,6 +5,10 @@ import TodoItem, { TodoItemProps } from '../components/TodoItem'
 import TodoItemsList from '../components/TodoitemsList'
 import styles from '../styles/Home.module.css'
 
+
+// TODO: set up continuous deployment on vercel 
+// TODO: make linting work 
+
 export interface TodoItemData {
   text: string,
   id: string
@@ -21,7 +25,6 @@ export const getFakeExistingTodos = (): TodoItemData[] => [
   returnNewTodoItemWithText('hello'),
   returnNewTodoItemWithText('hi')
 ];
-
 
 export default function Home() {
   const [todos, setTodos] = useState(getExistingTodos());
