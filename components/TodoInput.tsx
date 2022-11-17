@@ -1,4 +1,3 @@
-// TODO: add tailwind
 import { useState } from 'react';
 import styles from '../styles/TodoInput.module.css'
 

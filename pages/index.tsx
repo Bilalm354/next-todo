@@ -5,17 +5,20 @@ import TodoItem, { TodoItemProps } from '../components/TodoItem'
 import TodoItemsList from '../components/TodoitemsList'
 import styles from '../styles/Home.module.css'
 
-// TODO: set up continuous deployment on vercel 
+// TODO: test if tailwind working
+// TODO: replace css with tailwind
 // TODO: make linting work 
 
 export interface TodoItemData {
   text: string,
-  id: string
+  id: string,
+  date: number
 }
 
 export const returnNewTodoItemWithText = (text: string): TodoItemData => {
   const id = Math.random().toString();
-  return { text, id }
+  const date = Date.now();
+  return { text, id, date }
 }
 
 const getExistingTodos = () => getFakeExistingTodos();
