@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import { useState } from 'react';
 import TodoInput from '../components/TodoInput';
-import TodoItem, { TodoItemProps } from '../components/TodoItem'
 import TodoItemsList from '../components/TodoitemsList'
 import styles from '../styles/Home.module.css'
 
