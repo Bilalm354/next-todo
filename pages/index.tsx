@@ -38,8 +38,11 @@ export default function Home() {
   }
 
   const deleteItem = (id: string) => {
-    const newTodos: TodoItemData[] = []; // todo 
-    setTodos(newTodos);
+    const indexInTodosOfTodoToRemove = todos.findIndex((todo) => todo.id === id);
+    const newTodos = todos;
+    newTodos.splice(indexInTodosOfTodoToRemove, 1);
+    console.log({ newTodos })
+    setTodos([...newTodos]);
   }
 
   return (
@@ -56,7 +59,9 @@ export default function Home() {
         </h1>
 
         <TodoInput addTodo={addTodo} />
-
+        <div onClick={deleteAllItems} className="text-red-500 w-2/5 text-center underline">
+          Delete All
+        </div>
         <TodoItemsList todoItemsData={todos} deleteItem={deleteItem} />
 
       </main>
@@ -64,8 +69,7 @@ export default function Home() {
       <footer className={styles.footer}>
         <a
           href="http://www.bilalminhas.com"
-          target="_blank"
-          rel="noopener noreferrer"
+          target="_blank" rel="noreferrer"
         >
           Created by Bilal Minhas
         </a>
