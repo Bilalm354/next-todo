@@ -16,15 +16,12 @@ describe('index', () => {
     })
 
 
-    it('should add new todo to existing todos when you press enter on input box', () => {
-
-    })
-
+    it.skip('should add new todo to existing todos when you press enter on input box', () => { })
+    it.skip('should check todo when clicked on', () => { })
     it.skip('should allow user to create todo', () => { })
     it.skip('user can edit todo', () => { })
     it.skip('added todo is saved to local storage', () => { })
     it.skip('can save todo', () => { })
-    it.skip('todo is styled', () => { })
     it.skip('saves todo to database', () => { })
     it.skip('loads todos from database', () => { })
     it.skip('renders loaded todos', () => { })

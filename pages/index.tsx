@@ -4,7 +4,6 @@ import TodoInput from '../components/TodoInput';
 import TodoItemsList from '../components/TodoitemsList'
 import styles from '../styles/Home.module.css'
 
-// TODO: test if tailwind working
 // TODO: replace css with tailwind
 // TODO: make linting work 
 
@@ -15,7 +14,7 @@ export interface TodoItemData {
 }
 
 export const returnNewTodoItemWithText = (text: string): TodoItemData => {
-  const id = Math.random().toString();
+  const id = Math.random().toString(); // TODO: replace with uuid
   const date = Date.now();
   return { text, id, date }
 }

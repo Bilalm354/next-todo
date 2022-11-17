@@ -3,8 +3,6 @@ import '@testing-library/jest-dom';
 import TodoItemsList from './TodoitemsList';
 import { getFakeExistingTodos } from '../pages';
 
-// TODO: 
-
 describe('TodoItemsList', () => {
     const todoItems = getFakeExistingTodos();
     beforeEach(() => {

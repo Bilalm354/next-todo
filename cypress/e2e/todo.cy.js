@@ -1,7 +1,5 @@
 /// <reference types="cypress" />
 
-// TODO: add to husky precommit
-
 describe('todo app', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/')
@@ -9,7 +7,7 @@ describe('todo app', () => {
     // TODO: populate todos
   })
 
-  it.only('displays todo header', () => { // TODO: remove only
+  it.only('displays todo header', () => {
     cy.get('[data-testid=heading]').should('have.text', 'Todos')
   })
 
