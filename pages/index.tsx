@@ -5,7 +5,6 @@ import TodoItem, { TodoItemProps } from '../components/TodoItem'
 import TodoItemsList from '../components/TodoitemsList'
 import styles from '../styles/Home.module.css'
 
-
 // TODO: set up continuous deployment on vercel 
 // TODO: make linting work 
 
