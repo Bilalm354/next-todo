@@ -6,9 +6,11 @@ interface ListItem {
   text: string;
 }
 
+// TODO: set up continuous deployment on vercel 
 // TODO: make linting work 
 // TODO: get rid of unused things in here
 // TODO: get rid of excess cypress files
+
 
 export default function Home() {
   return (
