@@ -1,5 +1,4 @@
 import { render, screen } from '@testing-library/react';
-import '@testing-library/jest-dom';
 import TodoItemsList from './TodoitemsList';
 import { getFakeExistingTodos } from '../pages';
 
@@ -19,6 +18,4 @@ describe('TodoItemsList', () => {
             expect(todoText).toBeInTheDocument();
         }
     })
-
-
 })

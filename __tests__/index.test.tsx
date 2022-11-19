@@ -1,6 +1,5 @@
 import { render, screen } from '@testing-library/react'
 import Home from '../pages/index'
-import '@testing-library/jest-dom'
 
 describe('index', () => {
     beforeEach(() => {
@@ -16,7 +15,6 @@ describe('index', () => {
     })
 
 
-    it.skip('should add new todo to existing todos when you press enter on input box', () => { })
     it.skip('should check todo when clicked on', () => { })
     it.skip('should allow user to create todo', () => { })
     it.skip('user can edit todo', () => { })
@@ -27,4 +25,8 @@ describe('index', () => {
     it.skip('renders loaded todos', () => { })
     it.skip('validates text in todos - removes whitespace etc and checks max length', () => { })
     it.skip('validates text in todos - removes whitespace etc and checks max length', () => { })
+    it.skip('should be able to add due date to todo', () => { })
+    it.skip('should be able to sort by date added', () => { })
+    it.skip('should be able to sort by date due', () => { })
+    it.skip('should be able to check todo', () => { })
 });

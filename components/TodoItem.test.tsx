@@ -1,6 +1,5 @@
 import { render, screen } from '@testing-library/react'
 import TodoItem from './TodoItem'
-import '@testing-library/jest-dom'
 import { getFakeExistingTodos } from '../pages'
 
 describe('TodoItem', () => {
