@@ -14,7 +14,7 @@
     "prepare": "husky install",
     "migrate": "npx prisma migrate dev",
     "studio": "npx prisma studio",
-    "db-push": "npm prisma db push"
+    "db-push": "npx prisma db push"
   },
   "dependencies": {
     "@prisma/client": "^4.7.0",
