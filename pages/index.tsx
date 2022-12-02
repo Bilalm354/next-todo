@@ -3,31 +3,33 @@ import { useState } from 'react';
 import TodoInput from '../components/TodoInput';
 import TodoItemsList from '../components/TodoitemsList'
 import styles from '../styles/Home.module.css'
+import { PrismaClient } from '@prisma/client'
+import { GetStaticProps, GetStaticPropsResult } from 'next';
 
 // TODO: replace css with tailwind
 // TODO: make linting work 
+// TODO: https://www.prisma.io/dataguide/postgresql/setting-up-postgresql-on-rds
+
 
 export interface TodoItemData {
   text: string,
-  id: string,
-  date: number
+  id: number,
+  date: string
+}
+
+interface TodoProps {
+  existingTodos: TodoItemData[]
 }
 
 export const returnNewTodoItemWithText = (text: string): TodoItemData => {
-  const id = Math.random().toString(); // TODO: replace with uuid
-  const date = Date.now();
+  const id = Math.random(); // TODO: replace with uuid
+  const date = Date.now().toString();
   return { text, id, date }
 }
 
-const getExistingTodos = () => getFakeExistingTodos();
-
-export const getFakeExistingTodos = (): TodoItemData[] => [
-  returnNewTodoItemWithText('hello'),
-  returnNewTodoItemWithText('hi')
-];
-
-export default function Home() {
-  const [todos, setTodos] = useState(getExistingTodos());
+export default function Home(props: TodoProps) {
+  const { existingTodos } = props;
+  const [todos, setTodos] = useState(existingTodos);
   const addTodo = (text: string) => {
     setTodos([...todos, returnNewTodoItemWithText(text)])
   }
@@ -36,12 +38,11 @@ export default function Home() {
     setTodos([]);
   }
 
-  const deleteItem = (id: string) => {
+  const deleteItem = (id: number) => {
     const indexInTodosOfTodoToRemove = todos.findIndex((todo) => todo.id === id);
-    const newTodos = todos;
-    newTodos.splice(indexInTodosOfTodoToRemove, 1);
-    console.log({ newTodos })
-    setTodos([...newTodos]);
+    const newTodos = [...todos.slice(0, indexInTodosOfTodoToRemove), ...todos.slice(indexInTodosOfTodoToRemove + 1)];
+
+    setTodos(newTodos);
   }
 
   return (
@@ -75,4 +76,13 @@ export default function Home() {
       </footer>
     </div>
   )
+}
+
+export async function getStaticProps(_context: never): Promise<GetStaticPropsResult<TodoProps>> {
+  const prisma = new PrismaClient()
+  const existingTodos = await prisma.todoItemData.findMany();
+
+  return {
+    props: { existingTodos },
+  };
 }

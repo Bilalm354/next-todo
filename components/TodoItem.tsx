@@ -2,7 +2,7 @@ import { TodoItemData } from "../pages";
 
 export interface TodoItemProps {
     todoItemData: TodoItemData;
-    deleteItem: (id: string) => void;
+    deleteItem: (id: number) => void;
 }
 
 export default function TodoItem({ todoItemData, deleteItem }: TodoItemProps) {

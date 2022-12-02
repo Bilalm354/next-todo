@@ -3,7 +3,7 @@ import Home from '../pages/index'
 
 describe('index', () => {
     beforeEach(() => {
-        render(<Home />)
+        render(<Home existingTodos={[]} />)
 
     });
     it('renders todo heading', () => {

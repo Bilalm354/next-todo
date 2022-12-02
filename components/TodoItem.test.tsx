@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react'
 import TodoItem from './TodoItem'
-import { getFakeExistingTodos } from '../pages'
+import { getFakeExistingTodos } from './TodoItemsList.test';
 
 describe('TodoItem', () => {
     const todoItem = getFakeExistingTodos()[0];

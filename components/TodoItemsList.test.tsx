@@ -1,6 +1,11 @@
 import { render, screen } from '@testing-library/react';
+import { returnNewTodoItemWithText, TodoItemData } from '../pages';
 import TodoItemsList from './TodoitemsList';
-import { getFakeExistingTodos } from '../pages';
+
+export const getFakeExistingTodos = (): TodoItemData[] => [
+    returnNewTodoItemWithText('hello'),
+    returnNewTodoItemWithText('hi')
+];
 
 describe('TodoItemsList', () => {
     const todoItems = getFakeExistingTodos();

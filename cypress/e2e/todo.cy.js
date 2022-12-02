@@ -7,7 +7,7 @@ describe('todo app', () => {
     // TODO: populate todos
   })
 
-  it.only('displays todo header', () => {
+  it('displays todo header', () => {
     cy.get('[data-testid=heading]').should('have.text', 'Todos')
   })
 

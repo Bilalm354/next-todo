@@ -3,7 +3,7 @@ import TodoItem from "./TodoItem";
 
 interface TodoItemsList {
     todoItemsData: TodoItemData[];
-    deleteItem: (id: string) => void;
+    deleteItem: (id: number) => void;
 }
 
 export default function TodoItemsList({ todoItemsData, deleteItem }: TodoItemsList) {
