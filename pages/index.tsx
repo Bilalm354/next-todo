@@ -4,7 +4,7 @@ import TodoInput from '../components/TodoInput';
 import TodoItemsList from '../components/TodoitemsList'
 import styles from '../styles/Home.module.css'
 import { PrismaClient } from '@prisma/client'
-import { GetServerSidePropsResult } from 'next';
+import { GetStaticPropsResult } from 'next';
 
 // TODO: replace css with tailwind
 // TODO: make linting work 
@@ -79,7 +79,7 @@ export default function Home(props: TodoProps) {
   )
 }
 
-export async function getServerSideProps(_context: never): Promise<GetServerSidePropsResult<TodoProps>> {
+export async function getStaticProps(_context: never): Promise<GetStaticPropsResult<TodoProps>> {
   const prisma = new PrismaClient()
   const existingTodos = await prisma.todoItemData.findMany();
 
